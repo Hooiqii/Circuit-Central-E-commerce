@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <script
+      src="https://kit.fontawesome.com/4bd38d7b8a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Circuit Central - Login</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <a href="index.html">
+            <img src="Images/logo.png" alt="logo" />
+            <span>Circuit Central</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="#">About Us</a></li>
+            <li>
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <a href="cart.html"
+                ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fa-solid fa-user" style="color: #ffffff"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <form id="loginForm" onsubmit="return loginUser()">
+      <h1>LOGIN</h1>
+      <p id="info">If you do not have an account with us, please register at the <a href="register.html">register </a>page.</p>
+      <label for="username"><span style="color:red">* </span>Username:</label>
+      <input type="text" id="username" name="username" required>
+      <br><br>
+      <label for="pwd"><span style="color:red">* </span>Password:</label>
+      <input type="password" id="pwd" name="pwd" required>
+      <button type="submit">Login</button>
+    </form>
+    <!--footer-->
+    <div class="footer">
+      <p>&copy; BIC21203 Assignment 2 2023/2024</p>
+    </div>
+    <script>
+      function loginUser() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("pwd").value;
+
+        if (username === "" || password === "") {
+          alert("Please provide both username and password.");
+          return false;
+        }
+
+        // Retrieve registered users
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+        var user = users.find(u => u.username === username && u.password === password);
+
+        if (user) {
+          alert("Login successful!");
+          window.location.href = "index.html";
+          return true;
+        } else {
+          alert("Incorrect username or password. Please try again.");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

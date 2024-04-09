@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/4bd38d7b8a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/productDetails.css" />
+    <title>Circuit Central</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <a href="index.html">
+            <img src="Images/logo.png" alt="logo" />
+            <span>Circuit Central</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="#">About Us</a></li>
+            <li>
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <a href="order.html"
+                ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fa-solid fa-user" style="color: #ffffff"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &gt;&gt; <a href="category.html">Category</a> &gt;&gt; Product Details
+  </div>
+    <div class="container">
+      <div class="product-image">
+        <i
+          class="fa-solid fa-angle-left"
+          id="prevBtn"
+          style="color: #000000"
+        ></i>
+        <img id="productImage" src="Images/asus1.png" alt="asus1" />
+        <i
+          class="fa-solid fa-angle-right"
+          id="nextBtn"
+          style="color: #000000"
+        ></i>
+      </div>
+      <div class="product-details">
+        <div class="product-info">
+          <h2>Asus Gaming Laptop FX506H-CHN345W</h2>
+          <p class="product-code">Product Code: ASUS123456</p>
+          <p>
+            Status:
+            <span style="color: green; font-weight: bold">In Stock</span>
+          </p>
+          <div class="color-selection">
+            <p>Color: <span id="colorOption">Black</span></p>
+          </div>
+          <div class="storage-selection">
+            <p>
+              Storage:
+              <button id="storage256GB" class="storage-button">256GB</button>
+              <button id="storage512GB" class="storage-button">512GB</button>
+            </p>
+          </div>
+          <p>Quantity: <input type="number" value="1" min="1" /></p>
+          <p class="product-price">Price: RM3,399.00</p>
+          <a href="#"><button id="addToCartBtn">Add to Cart</button></a>
+        </div>
+      </div>
+      <div class="product-description">
+        <h3>Description:</h3>
+        <ul>
+          <li>
+            The Asus Gaming Laptop FX506H-CHN345W is a high-performance gaming
+            laptop designed to deliver an immersive gaming experience. Powered
+            by powerful components, this laptop ensures smooth gameplay and
+            quick response times, allowing gamers to enjoy their favorite titles
+            with exceptional graphics and performance.
+          </li>
+          <li>
+            Equipped with a powerful Intel Core processor, this gaming laptop
+            provides the processing power needed for demanding games and
+            multitasking. Whether you're gaming, streaming, or working on
+            resource-intensive applications, the laptop handles it all with
+            ease.
+          </li>
+          <li>
+            Enjoy stunning visuals and fast-paced action on the laptop's
+            high-refresh-rate display. The screen features a high resolution and
+            excellent color accuracy, enhancing the gaming experience by
+            delivering sharp and vibrant graphics. With a fast refresh rate,
+            you'll experience minimal motion blur, ensuring a smooth and
+            immersive gameplay.
+          </li>
+          <li>
+            The gaming laptop is equipped with dedicated NVIDIA GeForce
+            graphics, providing exceptional gaming performance and realistic
+            visuals. Experience lifelike graphics and smooth frame rates,
+            allowing you to fully immerse yourself in the gaming world.
+          </li>
+          <li>
+            Stay cool and maintain optimal performance during intense gaming
+            sessions, thanks to the laptop's efficient cooling system. The
+            advanced cooling technology ensures that the laptop remains
+            thermally stable, preventing overheating and ensuring consistent
+            performance even during extended gameplay.
+          </li>
+          <li>
+            Customize your gaming experience with the laptop's customizable RGB
+            keyboard. Choose from a variety of colors and lighting effects to
+            create a personalized gaming setup. The comfortable keyboard design
+            with responsive keys allows for precise input during gaming and
+            typing tasks.
+          </li>
+          <li>
+            Connectivity options such as high-speed USB ports, HDMI, and audio
+            jacks provide easy integration with gaming peripherals and
+            accessories. Whether you're connecting a gaming mouse, headset, or
+            external display, the laptop offers convenient ports for seamless
+            connectivity.
+          </li>
+          <li>
+            Experience immersive audio with the laptop's high-quality speakers
+            and audio technology. Enjoy realistic sound effects, dialogue, and
+            music, enhancing the overall gaming experience. Whether you're
+            playing single-player games or engaging in multiplayer battles, the
+            laptop delivers impressive audio quality.
+          </li>
+          <li>
+            The durable and stylish design of the laptop reflects its gaming
+            prowess. The sleek and modern aesthetics, along with premium build
+            quality, make it a visually appealing choice for gamers. The
+            laptop's portable design allows you to take your gaming adventures
+            on the go, ensuring you can enjoy gaming anytime, anywhere.
+          </li>
+          <li>
+            Whether you're a casual gamer or a competitive esports player, the
+            Asus Gaming Laptop FX506H-CHN345W offers the performance, graphics,
+            and features needed to elevate your gaming experience. Immerse
+            yourself in the world of gaming and enjoy seamless gameplay with
+            this powerful and feature-packed gaming laptop.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--Button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to Top">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <!--footer-->
+    <div class="footer">
+      <p>BIC21203 Assignment 1 2023/2024</p>
+    </div>
+    <script>
+      // JavaScript for Image Carousel
+      const images = ["asus1.png", "asus1v2.png", "asus1v3.png", "asus1v4.png"];
+      const colorOptions = ["Black", "Black", "Black", "Black"];
+
+      let currentImageIndex = 0;
+      const productImage = document.getElementById("productImage");
+      const colorOptionElement = document.getElementById("colorOption");
+
+      document.getElementById("prevBtn").addEventListener("click", function () {
+        currentImageIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        updateProductDetails();
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", function () {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateProductDetails();
+      });
+
+      function updateProductDetails() {
+        productImage.src = "Images/" + images[currentImageIndex];
+        colorOptionElement.textContent = colorOptions[currentImageIndex];
+      }
+
+      // JavaScript for Storage Selection
+      const storageButtons = document.querySelectorAll(".storage-button");
+      storageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          storageButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+          button.classList.add("active");
+        });
+      });
+
+      // JavaScript for Add to Cart Button
+      document
+        .getElementById("addToCartBtn")
+        .addEventListener("click", function () {
+          const selectedStorage = document.querySelector(
+            ".storage-button.active"
+          ).textContent;
+
+          // Create an object to store product details
+          const productDetails = {
+            productCode: "ASUS123456", // You can get this dynamically if needed
+            color: document.getElementById("colorOption").textContent,
+            storage: selectedStorage,
+            quantity: document.querySelector("input[type='number']").value,
+            price: "RM3,399.00", // You can get this dynamically if needed
+          };
+
+          // Get the existing cart items from local storage or initialize an empty array
+          const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+          // Add the current product details to the cart
+          cartItems.push(productDetails);
+
+          // Save the updated cart items back to local storage
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+
+          alert(
+            `Added to cart: Color - ${productDetails.color}, Storage - ${productDetails.storage}`
+          );
+        });
+      // Button scroll script
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        var button = document.getElementById("myBtn");
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </body>
+</html>

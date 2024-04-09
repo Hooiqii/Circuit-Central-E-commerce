@@ -1,0 +1,152 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation Bar */
+header {
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* Adjust the spacing between the logo and text */
+}
+
+.logo a {
+  display: flex;
+  align-items: center; /* Align the text and the image on the same line */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.logo span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  font-size: 15px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+nav ul li a:hover {
+  color: #5981c5;
+  border-top: 4px solid #5981c5;
+  border-bottom: 4px solid #5981c5;
+}
+
+nav ul li a:hover::before {
+  color: #5981c5;
+  border-top: 1px solid #5981c5;
+  border-bottom: 1px solid #5981c5;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    padding: 1px; /* Adjust padding for better spacing */
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+/* Form */
+form {
+    z-index: 1;
+    margin: 80px auto;
+    text-align: left;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px; /* Adjust the width as needed */
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+
+form h1 {
+  text-align: center;
+}
+
+form #info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form #info a {
+  color: red;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Added a border for input fields */
+  border-radius: 4px; /* Added border-radius for rounded corners */
+}
+
+button {
+  background-color: #5981c5;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #3877e2; /* Darker color on hover for better feedback */
+}

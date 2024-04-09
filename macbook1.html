@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/4bd38d7b8a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/productDetails.css" />
+    <title>Circuit Central</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <a href="index.html">
+            <img src="Images/logo.png" alt="logo" />
+            <span>Circuit Central</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="#">About Us</a></li>
+            <li>
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <a href="order.html"
+                ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fa-solid fa-user" style="color: #ffffff"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &gt;&gt; <a href="category.html">Category</a> &gt;&gt; Product Details
+  </div>
+
+    <div class="container">
+      <div class="product-image">
+        <i
+          class="fa-solid fa-angle-left"
+          id="prevBtn"
+          style="color: #000000"
+        ></i>
+        <img id="productImage" src="Images/macbook1.png" alt="macbook1" />
+        <i
+          class="fa-solid fa-angle-right"
+          id="nextBtn"
+          style="color: #000000"
+        ></i>
+      </div>
+      <div class="product-details">
+        <div class="product-info">
+          <h2>Apple MacBook Air M2 Chip 2023 (15-inch) - 256GB / 512GB SSD</h2>
+          <p class="product-code">Product Code: APPLE123456</p>
+          <p>
+            Status:
+            <span style="color: green; font-weight: bold">In Stock</span>
+          </p>
+          <div class="color-selection">
+            <p>Color: <span id="colorOption">Midnight</span></p>
+          </div>
+          <div class="storage-selection">
+            <p>
+              Storage:
+              <button id="storage256GB" class="storage-button">256GB</button>
+              <button id="storage512GB" class="storage-button">512GB</button>
+            </p>
+          </div>
+          <p>Quantity: <input type="number" value="1" min="1" /></p>
+          <p class="product-price">Price: RM6,199.00</p>
+          <a href="#"><button id="addToCartBtn">Add to Cart</button></a>
+        </div>
+      </div>
+      <div class="product-description">
+        <h3>Description:</h3>
+        The 15-inch MacBook Air is great for multitasking and seeing your
+        ideas come to life on its Liquid Retina display. Supercharged by the
+        M2 chip, it delivers up to 18 hours of battery life for a full day of
+        classes and marathon study sessions. Its ultraportable design is
+        strikingly thin and light and come in four stellar colors for a pop of
+        personal style.
+        <ul>
+          <li>M2 chip for incredible performance</li>
+          <li>
+            8-core CPU and up to 10-core GPU to power through complex projects
+          </li>
+          <li>16-core Neural Engine for advanced machine learning tasks</li>
+          <li>
+            Up to 24GB of unified memory makes everything you do fast and
+            fluid
+          </li>
+          <li>
+            Up to 20 percent faster for applying image filters and effects2
+          </li>
+          <li>
+            Up to 40 percent faster for editing complex video timelines2
+          </li>
+          <li>
+            Go all day with up to 18 hours of battery life for a full class
+            schedule1
+          </li>
+          <li>Fanless design for silent operation</li>
+          <li>
+            15.3-inch Liquid Retina display with 500 nits of brightness and P3
+            wide color for vibrant images and incredible details
+          </li>
+          <li>
+            1080p FaceTime HD camera for immersive video calls and brainstorms
+            with classmates anywhere
+          </li>
+          <li>
+            Three-microphone array focuses on your voice instead of what’s
+            going on around you
+          </li>
+          <li>
+            Six-speaker sound system with Spatial Audio for an immersive
+            listening experience
+          </li>
+          <li>
+            MagSafe 3 port, two Thunderbolt ports, and headphone jack so you
+            can be flexible wherever you study
+          </li>
+          <li>Quick-releasing MagSafe port with fast charging capability</li>
+          <li>Backlit Magic Keyboard with Touch ID for secure unlock</li>
+          <li>Fast Wi-Fi 6 wireless connectivity</li>
+          <li>
+            Superfast SSD storage launches apps and opens files in an instant
+          </li>
+          <li>
+            macOS Ventura gives you powerful ways to get more done, share, and
+            collaborate—and works great with iPhone and iPad4
+          </li>
+          <li>
+            Sturdy and built to last from the first day of school to landing
+            your dream job
+          </li>
+          <li>Available in Midnight, Starlight, Space Gray, and Silver</li>
+        </ul>
+      </div>
+    </div>
+
+    <!--Button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to Top">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <!--footer-->
+    <div class="footer">
+      <p>BIC21203 Assignment 1 2023/2024</p>
+    </div>
+    <script>
+      // JavaScript for Image Carousel
+      const images = [
+        "macbook1.png",
+        "macbook1v2.png",
+        "macbook1v3.png",
+        "macbook1v4.png",
+      ];
+      const colorOptions = ["Midnight", "Space Gray", "Starlight", "Silver"];
+
+      let currentImageIndex = 0;
+      const productImage = document.getElementById("productImage");
+      const colorOptionElement = document.getElementById("colorOption");
+
+      document.getElementById("prevBtn").addEventListener("click", function () {
+        currentImageIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        updateProductDetails();
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", function () {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateProductDetails();
+      });
+
+      function updateProductDetails() {
+        productImage.src = "Images/" + images[currentImageIndex];
+        colorOptionElement.textContent = colorOptions[currentImageIndex];
+      }
+
+      // JavaScript for Storage Selection
+      const storageButtons = document.querySelectorAll(".storage-button");
+      storageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          storageButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+          button.classList.add("active");
+        });
+      });
+
+      // JavaScript for Add to Cart Button
+      document
+        .getElementById("addToCartBtn")
+        .addEventListener("click", function () {
+          const selectedStorage = document.querySelector(
+            ".storage-button.active"
+          ).textContent;
+
+          // Create an object to store product details
+          const productDetails = {
+            productCode: "APPLE123456", // You can get this dynamically if needed
+            color: document.getElementById("colorOption").textContent,
+            storage: selectedStorage,
+            quantity: document.querySelector("input[type='number']").value,
+            price: "RM6,199.00", // You can get this dynamically if needed
+          };
+
+          // Get the existing cart items from local storage or initialize an empty array
+          const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+          // Add the current product details to the cart
+          cartItems.push(productDetails);
+
+          // Save the updated cart items back to local storage
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+
+          alert(`Added to cart: Color - ${productDetails.color}, Storage - ${productDetails.storage}`);
+        });
+      // Button scroll script
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        var button = document.getElementById("myBtn");
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/4bd38d7b8a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/productDetails.css" />
+    <title>Circuit Central</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <a href="index.html">
+            <img src="Images/logo.png" alt="logo" />
+            <span>Circuit Central</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="#">About Us</a></li>
+            <li>
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <a href="order.html"
+                ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fa-solid fa-user" style="color: #ffffff"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &gt;&gt; <a href="category.html">Category</a> &gt;&gt; Product Details
+  </div>
+    <div class="container">
+      <div class="product-image">
+        <i
+          class="fa-solid fa-angle-left"
+          id="prevBtn"
+          style="color: #000000"
+        ></i>
+        <img id="productImage" src="Images/hp2.png" alt="hp2" />
+        <i
+          class="fa-solid fa-angle-right"
+          id="nextBtn"
+          style="color: #000000"
+        ></i>
+      </div>
+      <div class="product-details">
+        <div class="product-info">
+          <h2>HP 15-FC0082AU / 15-FC0083AU 15.6" FHD Laptop</h2>
+          <p class="product-code">Product Code: HP223456</p>
+          <p>
+            Status:
+            <span style="color: green; font-weight: bold">In Stock</span>
+          </p>
+          <div class="color-selection">
+            <p>Color: <span id="colorOption">Silver</span></p>
+          </div>
+          <div class="storage-selection">
+            <p>
+              Storage:
+              <button id="storage256GB" class="storage-button">256GB</button>
+              <button id="storage512GB" class="storage-button">512GB</button>
+            </p>
+          </div>
+          <p>Quantity: <input type="number" value="1" min="1" /></p>
+          <p class="product-price">Price: RM2,349.00</p>
+          <a href="#"><button id="addToCartBtn">Add to Cart</button></a>
+        </div>
+      </div>
+      <div class="product-description">
+        <h3>Description:</h3>
+        <ul>
+            <li>The HP 15-FC0082AU / 15-FC0083AU 15.6" FHD Laptop is a powerful and versatile computing device designed to meet your everyday computing needs with style and performance.</li>
+            <li>Equipped with a vibrant 15.6-inch Full HD display, this laptop delivers sharp and clear visuals, making it perfect for work, entertainment, and multimedia content.</li>
+            <li>Powered by an AMD Ryzen™ processor, this laptop offers reliable performance for smooth multitasking, efficient work processes, and seamless web browsing.</li>
+            <li>Experience responsive computing with a generous amount of RAM, ensuring quick application launches and smooth handling of multiple tasks simultaneously.</li>
+            <li>Ample SSD storage capacity provides fast data access, quick system boot-up, and sufficient space for your files, documents, photos, and videos.</li>
+            <li>Stay connected with high-speed Wi-Fi and easily collaborate with the built-in webcam and microphone, making it ideal for online meetings, video calls, and virtual classrooms.</li>
+            <li>Featuring a sleek and lightweight design, this laptop is easy to carry around, allowing you to stay productive and entertained wherever you go.</li>
+            <li>Enhanced security features and user-friendly interface make it a reliable choice for professionals, students, and anyone seeking a dependable and stylish laptop for everyday use.</li>
+        </ul>        
+      </div>
+    </div>
+
+    <!--Button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to Top">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <!--footer-->
+    <div class="footer">
+      <p>BIC21203 Assignment 1 2023/2024</p>
+    </div>
+    <script>
+      // JavaScript for Image Carousel
+      const images = [
+        "hp2.png",
+        "hp2v2.png",
+        "hp2v3.png",
+        "hp2v4.png",
+      ];
+      const colorOptions = ["Silver", "Silver", "Silver", "Silver"];
+
+      let currentImageIndex = 0;
+      const productImage = document.getElementById("productImage");
+      const colorOptionElement = document.getElementById("colorOption");
+
+      document.getElementById("prevBtn").addEventListener("click", function () {
+        currentImageIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        updateProductDetails();
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", function () {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateProductDetails();
+      });
+
+      function updateProductDetails() {
+        productImage.src = "Images/" + images[currentImageIndex];
+        colorOptionElement.textContent = colorOptions[currentImageIndex];
+      }
+
+      // JavaScript for Storage Selection
+      const storageButtons = document.querySelectorAll(".storage-button");
+      storageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          storageButtons.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+          button.classList.add("active");
+        });
+      });
+
+      // JavaScript for Add to Cart Button
+      document
+        .getElementById("addToCartBtn")
+        .addEventListener("click", function () {
+          const selectedStorage = document.querySelector(
+            ".storage-button.active"
+          ).textContent;
+
+          // Create an object to store product details
+          const productDetails = {
+            productCode: "HP223456", // You can get this dynamically if needed
+            color: document.getElementById("colorOption").textContent,
+            storage: selectedStorage,
+            quantity: document.querySelector("input[type='number']").value,
+            price: "RM2,349.00", // You can get this dynamically if needed
+          };
+
+          // Get the existing cart items from local storage or initialize an empty array
+          const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+          // Add the current product details to the cart
+          cartItems.push(productDetails);
+
+          // Save the updated cart items back to local storage
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+
+          alert(`Added to cart: Color - ${productDetails.color}, Storage - ${productDetails.storage}`);
+        });
+
+      // Button scroll script
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        var button = document.getElementById("myBtn");
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation Bar */
+header {
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* Adjust the spacing between the logo and text */
+}
+
+.logo a {
+  display: flex;
+  align-items: center; /* Align the text and the image on the same line */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.logo span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  font-size: 15px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+nav ul li a:hover {
+  color: #5981c5;
+  border-top: 4px solid #5981c5;
+  border-bottom: 4px solid #5981c5;
+}
+
+nav ul li a:hover::before {
+  color: #5981c5;
+  border-top: 1px solid #5981c5;
+  border-bottom: 1px solid #5981c5;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  padding: 1px;
+  font-size: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.order-summary {
+  margin: 20px;
+}
+
+button {
+  background-color: #ff5050;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cc0000;
+}
+
+/* Adjustments for the table layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td:last-child,
+td:nth-last-child(2) {
+  text-align: left;
+}
+
+/* Discount and Total Price Message Styles */
+.discount-total-message {
+  margin-top: 10px;
+}
+
+#discountMessage,
+#freePostage {
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+#freePostage {
+  color: #009900; /* Green color for free postage */
+}
+
+#totalPrice {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}

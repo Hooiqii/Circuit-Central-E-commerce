@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <link rel="stylesheet" href="./css/order.css" />
+    <script
+      src="https://kit.fontawesome.com/4bd38d7b8a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Circuit Central - Cart</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <a href="index.html">
+            <img src="Images/logo.png" alt="logo" />
+            <span>Circuit Central</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="#">About Us</a></li>
+            <li>
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <a href="order.html"
+                ><i class="fa-solid fa-cart-shopping" style="color: #ffffff"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fa-solid fa-user" style="color: #ffffff"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Order Summary Section -->
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Code</th>
+            <th>Color</th>
+            <th>Storage</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Price Per Item</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="orderList"></tbody>
+      </table>
+      <p id="totalPrice">Total Price: RM0.00</p>
+    </div>
+
+    <!-- Discount and Total Price Message -->
+    <div class="discount-total-message">
+      <p id="discountMessage"></p>
+      <p id="freePostage"></p>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+      <p>&copy; BIC21203 Assignment 2 2023/2024</p>
+    </div>
+
+    <!-- JavaScript for Order Summary -->
+    <script>
+      // Retrieve cart items from local storage
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Display order summary
+      const orderList = document.getElementById("orderList");
+      const totalPriceElement = document.getElementById("totalPrice");
+      let totalPrice = 0;
+
+      cartItems.forEach((item) => {
+        const row = document.createElement("tr");
+        const totalPerItem =
+          parseFloat(item.price.replace("RM", "").replace(",", "")) *
+          parseInt(item.quantity);
+
+        row.innerHTML = `
+          <td>${item.productCode}</td>
+          <td>${item.color}</td>
+          <td>${item.storage}</td>
+          <td>${item.quantity}</td>
+          <td>${item.price}</td>
+          <td>RM${totalPerItem.toFixed(2)}</td>
+          <td><button onclick="removeItem('${
+            item.productCode
+          }')">Remove</button></td> <!-- Add this line for the remove button -->
+        `;
+
+        orderList.appendChild(row);
+
+        // Calculate total price
+        const itemPrice = parseFloat(
+          item.price.replace("RM", "").replace(",", "")
+        );
+        totalPrice += totalPerItem;
+      });
+
+      function removeItem(productCode) {
+        // Implement the logic to remove the item from the cartItems array and update the display
+        // For example:
+        const updatedCartItems = cartItems.filter(
+          (item) => item.productCode !== productCode
+        );
+        localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+        location.reload(); // Reload the page to reflect the changes
+      }
+
+      // Apply discount based on total quantity
+      let discount = 0;
+      let discountMessage = "";
+      const totalQuantity = cartItems.reduce(
+        (total, item) => total + parseInt(item.quantity), 0);
+
+      if (totalQuantity >= 5 && totalQuantity <= 10) {
+        discount = 0.05;
+        discountMessage = "You've received a 5% discount!";
+      } else if (totalQuantity > 10) {
+        discount = 0.15;
+        discountMessage = "You've received a 15% discount!";
+      }
+
+      let postageFee = 0;
+      let freePostageMessage = "";
+      if (totalPrice > 100) {
+        freePostageMessage = "Free postage!";
+      } else {
+        postageFee = 10;
+        freePostageMessage = `RM${postageFee} postage fee applies.`;
+      }
+
+      totalPrice *= 1 - discount;
+      totalPrice += postageFee;
+
+      // Display discount and free postage messages
+      const discountMessageElement = document.getElementById("discountMessage");
+      discountMessageElement.textContent = discountMessage;
+
+      const freePostageElement = document.getElementById("freePostage");
+      freePostageElement.textContent = freePostageMessage;
+
+      // Display total price
+      totalPriceElement.textContent = `Total Price: RM${totalPrice.toFixed(2)}`;
+
+      // Save the updated cart items
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      //localStorage.clear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation Bar */
+header {
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* Adjust the spacing between the logo and text */
+}
+
+.logo a {
+  display: flex;
+  align-items: center; /* Align the text and the image on the same line */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.logo span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  font-size: 15px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+nav ul li a:hover {
+  color: #5981c5;
+  border-top: 4px solid #5981c5;
+  border-bottom: 4px solid #5981c5;
+}
+
+/* Category */
+.categories {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.categories ul {
+  list-style: none;
+}
+
+.categories ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.categories ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #5981c5;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.categories ul li a.active {
+  color: black;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.categories ul li a:hover {
+  color: black;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+/* Product */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px;
+}
+
+.product-item {
+  flex: 0 1 calc(30% - 20px);
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
+
+.product-item a {
+  text-decoration: none;
+  color: black;
+  display: block;/* Set anchor element as a block element */
+  font-size: 20px; /*(used)*/
+  font-weight: bold; /*(used)*/
+}
+
+.product-item a:hover {
+  color: #5981c5;
+}
+
+.product-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-price{
+  font-size: 18px;
+  font-weight:400;
+}
+
+.product-item a:hover .product-price{
+  color: #d88;
+}
+
+/* Button to scroll to the top */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #3f64a3; /* Button background color */
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#myBtn:hover {
+  background-color: #2e77f5; /* Change color on hover */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  padding: 1px;
+  font-size: 15px;
+}

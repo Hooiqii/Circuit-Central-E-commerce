@@ -1,0 +1,257 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation Bar */
+header {
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* Adjust the spacing between the logo and text */
+}
+
+.logo a {
+  display: flex;
+  align-items: center; /* Align the text and the image on the same line */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.logo span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  font-size: 15px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+nav ul li a:hover {
+  color: #5981c5;
+  border-top: 4px solid #5981c5;
+  border-bottom: 4px solid #5981c5;
+}
+
+nav ul li a:hover::before {
+  color: #5981c5;
+  border-top: 1px solid #5981c5;
+  border-bottom: 1px solid #5981c5;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  width: 1000px;
+  margin: 30px auto;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.banner-img:first-child {
+  opacity: 1;
+}
+
+/* Feature Product*/
+.featurePdct {
+  margin: 50px 30px;
+  text-align: center;
+}
+
+.featurePdct p {
+  font-size: 20px;
+  color: #5981c5;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  margin: 10px 20px 10px 20px;
+  padding: 15px 15px 10px 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  width: 450px;
+  height: 500px;
+  background-color: #fff;
+}
+
+.column img {
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.column img:hover {
+  width: 370px;
+  height: 370px;
+}
+
+.column p:first-of-type {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.column p:nth-of-type(2) {
+  font-size: 18px;
+}
+.column p:nth-of-type(2):hover {
+  color: #d88;
+}
+
+/* Brand */
+.brand {
+  margin: 50px 30px;
+  text-align: center;
+}
+
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand-column {
+  flex: 1;
+  margin: 20px 0px 20px 20px;
+  padding: 20px 15px 10px 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  width: 250px;
+  height: 200px;
+  background-color: #ffffff;
+}
+
+.brand-column img {
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.brand-column img:hover {
+  width: 200px;
+  height: 200px;
+}
+
+/* Location */
+.location {
+  text-align: center;
+}
+
+.location h1 {
+  border-bottom: 2px dotted #000; /* Dotted line under h1 */
+  margin-bottom: 20px; /* Add some space between h1 and content below */
+  padding-bottom: 10px;
+}
+
+.location-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location-column {
+  flex: 1;
+  margin: 10px 10px 10px 20px;
+  padding: 20px 15px 10px 15px;
+}
+
+.location-column p {
+  text-align: left;
+  margin-left: 10px; /* Add a margin between icon and text */
+  font-size: 18px;
+}
+
+.location-column i {
+  margin-right: 10px; /* Add a margin between icon and text */
+}
+
+/* Button to scroll to the top */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #3f64a3; /* Button background color */
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#myBtn:hover {
+  background-color: #2e77f5; /* Change color on hover */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  padding: 1px;
+  font-size: 15px;
+}
